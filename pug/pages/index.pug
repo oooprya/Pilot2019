@@ -3,18 +3,18 @@ extends layout/main
 block title
 		| Главная страница
 block content
-		h1 jljklasd
-		p Всем привет огого
-		mixin item-res
-				.item-res
+		h1.hiden Доставка еды из ресторанов города. Заказать еду из ресторана
+		
+		mixin item-res 
+				.item-res.col-4
 						.rest-img
-								img(src="img/rest-image_1.jpg")
+								img(src="img/469.jpg")
 						.rest-description
 							.rest-description-inner
-									img(src="img/rest-logo.jpg" alt="")
 						.desc-title-block
 							.rest-title Робин Бобин
-
-		+item-res
-		+item-res
-		+item-res
+		.container
+			.wrap-rest.row
+				+item-res
+				+item-res
+				+item-res

@@ -1,11 +1,11 @@
 $grey: #4dcef5;
 $text-color: #181d1f;
 
-.container {
-    margin: 0 auto;
-    width: 70%;
-    background-color: $grey;
+img {
+    max-width: 100%;
+}
 
+.container {
     .paragraph {
         text-align: center;
         font-family: Arial;
