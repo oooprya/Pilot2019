@@ -1,0 +1,27 @@
+extends layout/main
+mixin nav(link,title)
+	if(title === 'page2')
+		li.link-item.action
+			a(href=link).link-nav=title
+	else
+		li.link-item
+			a(href=link).link-nav=title
+
+block varibles
+		- var title = 'страница2'
+block content
+		h1.hidden Доставка еды из ресторанов города. Заказать еду из ресторана
+		
+		mixin item-res 
+				.item-res.col-4
+						.rest-img
+								img(src="img/469.jpg")
+						.rest-description
+							.rest-description-inner
+						.desc-title-block
+							.rest-title Робин Бобин
+		.container
+			.wrap-rest.row
+				+item-res
+				+item-res
+				+item-res

@@ -1,11 +1,11 @@
 doctype html
+block varibles
 html(lang="ru-Ru")
     head 
         link(rel="stylesheet", href="css/bootstrap-grid.css")
         link(rel="stylesheet", href="css/styles.css")
-        title
-            block title
-    body
+        title #{title}
+    body(class={'add-class':mainPage})
         include ../modules/header
         block content
         include ../modules/footer

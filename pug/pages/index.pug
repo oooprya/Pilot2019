@@ -1,20 +1,42 @@
 extends layout/main
+block varibles
+	- var title = 'Главная страница'
+	- var mainPage = true
+	- var navLinks = [{link: "#", name: "1"},{link: "#", name: "2"}]
+mixin nav(link,title)
+	if(title === 'index')
+		li.link-item.action
+			a(href=link).link-nav=title
+	else
+		li.link-item
+			a(href=link).link-nav=title
 
-block title
-		| Главная страница
+mixin item-res 
+	.item-res.col-4
+		.rest-img
+			img(src="img/469.jpg")
+		.rest-description
+			.rest-description-inner
+		.desc-title-block
+			.rest-title Робин Бобин
+
 block content
-		h1.hiden Доставка еды из ресторанов города. Заказать еду из ресторана
-		
-		mixin item-res 
-				.item-res.col-4
-						.rest-img
-								img(src="img/469.jpg")
-						.rest-description
-							.rest-description-inner
-						.desc-title-block
-							.rest-title Робин Бобин
-		.container
-			.wrap-rest.row
-				+item-res
-				+item-res
-				+item-res
+		h1.hidden Доставка еды из ресторанов города. Заказать еду из ресторана
+		p Иван Иваныч #[a(href="site.ru") miilafon.ru] 2017г.
+		input(
+			type='checkbox'
+			name='agreement'
+			checked
+		)
+		a(class='button', href='google.com') Google
+		ul.nav
+			for i in navLinks
+				li
+					a(htef=i.link).ntext=i.name
+
+		if(mainPage)
+			.container
+				.wrap-rest.row
+					+item-res
+					+item-res
+					+item-res
